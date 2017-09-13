@@ -1,5 +1,0 @@
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Domain\bin\Debug\ResourceBox.Domain.dll
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Domain\bin\Debug\ResourceBox.Domain.pdb
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Domain\obj\Debug\ResourceBox.Domain.csprojResolveAssemblyReference.cache
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Domain\obj\Debug\ResourceBox.Domain.dll
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Domain\obj\Debug\ResourceBox.Domain.pdb

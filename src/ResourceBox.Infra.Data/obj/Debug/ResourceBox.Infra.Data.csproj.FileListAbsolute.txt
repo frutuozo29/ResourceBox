@@ -1,5 +1,0 @@
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Infra.Data\bin\Debug\ResourceBox.Infra.Data.dll
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Infra.Data\bin\Debug\ResourceBox.Infra.Data.pdb
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Infra.Data\obj\Debug\ResourceBox.Infra.Data.csprojResolveAssemblyReference.cache
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Infra.Data\obj\Debug\ResourceBox.Infra.Data.dll
-C:\projetos\dotnet\Resourcebox\src\ResourceBox.Infra.Data\obj\Debug\ResourceBox.Infra.Data.pdb
