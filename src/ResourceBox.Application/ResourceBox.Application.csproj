@@ -40,8 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRecursoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AppServiceBase.cs" />
+    <Compile Include="Services\RecursoAppService.cs" />
+    <Compile Include="ViewModel\RecursoViewModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResourceBox.Domain\ResourceBox.Domain.csproj">
+      <Project>{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}</Project>
+      <Name>ResourceBox.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

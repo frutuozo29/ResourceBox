@@ -37,8 +37,8 @@
     <Compile Include="Interfaces\Repository\IRecursoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IRecursoService.cs" />
-    <Compile Include="Services\IServiceBase.cs" />
+    <Compile Include="Interfaces\Services\IRecursoService.cs" />
+    <Compile Include="Interfaces\Services\IServiceBase.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
