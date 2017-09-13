@@ -2,7 +2,7 @@
 
 namespace ResourceBox.Domain.Interfaces.Repository
 {
-    interface IRecursoRepository : IRepositoryBase<Recurso>
+    public interface IRecursoRepository : IRepositoryBase<Recurso>
     {
     }
 }

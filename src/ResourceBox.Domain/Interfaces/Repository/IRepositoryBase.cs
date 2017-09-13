@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ResourceBox.Domain.Interfaces.Repository
 {
-    interface IRepositoryBase<TEntity> : IDisposable where TEntity : class
+    public interface IRepositoryBase<TEntity> : IDisposable where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(long id);

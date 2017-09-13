@@ -2,7 +2,7 @@
 
 namespace ResourceBox.Domain.Services
 {
-    interface IRecursoService : IServiceBase<Recurso>
+    public interface IRecursoService : IServiceBase<Recurso>
     {
     }
 }

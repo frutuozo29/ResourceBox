@@ -2,7 +2,7 @@
 
 namespace ResourceBox.Domain.Services
 {
-    interface IServiceBase<TEntity> where TEntity : class
+    public interface IServiceBase<TEntity> where TEntity : class
     {
         void Add(TEntity obj);
         TEntity GetById(long id);
