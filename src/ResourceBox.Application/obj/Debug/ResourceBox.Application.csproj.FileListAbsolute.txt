@@ -1,0 +1,5 @@
+C:\projetos\dotnet\Resourcebox\src\ResourceBox.Application\bin\Debug\ResourceBox.Application.dll
+C:\projetos\dotnet\Resourcebox\src\ResourceBox.Application\bin\Debug\ResourceBox.Application.pdb
+C:\projetos\dotnet\Resourcebox\src\ResourceBox.Application\obj\Debug\ResourceBox.Application.csprojResolveAssemblyReference.cache
+C:\projetos\dotnet\Resourcebox\src\ResourceBox.Application\obj\Debug\ResourceBox.Application.dll
+C:\projetos\dotnet\Resourcebox\src\ResourceBox.Application\obj\Debug\ResourceBox.Application.pdb

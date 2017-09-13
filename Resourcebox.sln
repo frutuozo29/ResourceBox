@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - FrontEnd", "1 - FrontEnd", "{745C15B3-BDEB-4273-989F-33064B886886}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - WebApi", "2 - WebApi", "{21F595FB-00E3-4602-BBA3-6B0255A3F71C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{6A97C886-5F11-4F7A-9380-5CAB8DDE5FF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{30576689-B9E2-4D68-B833-A5BD7FE3307A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{13AE50A7-2DEB-4666-9592-4326354F2C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBox.Domain", "src\ResourceBox.Domain\ResourceBox.Domain.csproj", "{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBox.Application", "src\ResourceBox.Application\ResourceBox.Application.csproj", "{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{C238B581-6E81-4DD4-A715-1CB1910083E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBox.Infra.Data", "src\ResourceBox.Infra.Data\ResourceBox.Infra.Data.csproj", "{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceBox.WebApi", "src\ResourceBox.WebApi\ResourceBox.WebApi.csproj", "{25A07B22-C538-44F0-9FC9-C3AE68EFA827}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25A07B22-C538-44F0-9FC9-C3AE68EFA827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25A07B22-C538-44F0-9FC9-C3AE68EFA827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25A07B22-C538-44F0-9FC9-C3AE68EFA827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25A07B22-C538-44F0-9FC9-C3AE68EFA827}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79} = {30576689-B9E2-4D68-B833-A5BD7FE3307A}
+		{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F} = {6A97C886-5F11-4F7A-9380-5CAB8DDE5FF9}
+		{C238B581-6E81-4DD4-A715-1CB1910083E9} = {13AE50A7-2DEB-4666-9592-4326354F2C9F}
+		{A4CBBC7B-AB2A-4BD6-892C-E32702CC8765} = {C238B581-6E81-4DD4-A715-1CB1910083E9}
+		{25A07B22-C538-44F0-9FC9-C3AE68EFA827} = {21F595FB-00E3-4602-BBA3-6B0255A3F71C}
+	EndGlobalSection
+EndGlobal
