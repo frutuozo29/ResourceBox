@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using ResourceBox.Application.AutoMapper;
+using System.Web.Http;
 
 namespace ResourceBox.WebApi
 {
@@ -7,6 +8,7 @@ namespace ResourceBox.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            AutoMapperConfig.RegisterMappings();
         }
     }
 }
