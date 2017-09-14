@@ -2,39 +2,63 @@
 using System.Collections.Generic;
 using ResourceBox.Application.Interfaces;
 using ResourceBox.Application.ViewModel;
+using AutoMapper;
+using ResourceBox.Domain.Entities;
+using ResourceBox.Domain.Services;
 
 namespace ResourceBox.Application.Services
 {
     public class RecursoAppService : AppServiceBase<RecursoViewModel>, IRecursoAppService
     {
+        private readonly IRecursoService recursoService;
+
+        public RecursoAppService(IRecursoService recursoService)
+        {
+            this.recursoService = recursoService;
+        }
+
+        private RecursoViewModel GetMapperRecursoToRecursoViewModel(Recurso recurso)
+        {
+            return Mapper.Instance.Map<Recurso, RecursoViewModel>(recurso);
+        }
+
+        private Recurso GetMapperRecursoViewModelToRecurso(RecursoViewModel recursoviewmodel)
+        {
+            return Mapper.Instance.Map<RecursoViewModel, Recurso>(recursoviewmodel);
+        }
+
         public void Add(RecursoViewModel obj)
-        {            
-            throw new NotImplementedException();
+        {
+            var recurso = GetMapperRecursoViewModelToRecurso(obj);
+            recursoService.Add(recurso);
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+
+            GC.SuppressFinalize(this);
         }
 
         public IEnumerable<RecursoViewModel> GetAll()
         {
-            throw new NotImplementedException();
+            return Mapper.Instance.Map<IEnumerable<Recurso>, IEnumerable<RecursoViewModel>>(recursoService.GetAll());
         }
 
         public RecursoViewModel GetById(long id)
         {
-            throw new NotImplementedException();
+            return GetMapperRecursoToRecursoViewModel(recursoService.GetById(id));
         }
 
         public void Remove(RecursoViewModel obj)
         {
-            throw new NotImplementedException();
+            recursoService.Remove(GetMapperRecursoViewModelToRecurso(obj));
         }
 
         public void Update(RecursoViewModel obj)
         {
-            throw new NotImplementedException();
+            var recurso = GetMapperRecursoViewModelToRecurso(obj);
+            recurso.Id = obj.Id;
+            recursoService.Update(recurso);
         }
     }
 }

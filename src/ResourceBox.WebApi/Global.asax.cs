@@ -9,6 +9,7 @@ namespace ResourceBox.WebApi
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             AutoMapperConfig.RegisterMappings();
+
         }
     }
 }
