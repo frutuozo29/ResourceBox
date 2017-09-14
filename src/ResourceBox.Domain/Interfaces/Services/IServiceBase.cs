@@ -8,6 +8,6 @@ namespace ResourceBox.Domain.Services
         TEntity GetById(long id);
         IEnumerable<TEntity> GetAll();
         void Update(TEntity obj);
-        void Remove(TEntity obj);
+        void Remove(long id);
     }
 }

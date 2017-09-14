@@ -45,11 +45,9 @@ namespace ResourceBox.WebApi.Controllers
             }
         }
 
-        // DELETE: api/Recurso/5
         public void Delete(long id)
-        {
-            var recurso = recursoAppService.GetById(id);
-            recursoAppService.Remove(recurso);
+        {            
+            recursoAppService.Remove(id);
         }
     }
 }

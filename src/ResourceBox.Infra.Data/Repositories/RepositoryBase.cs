@@ -36,16 +36,20 @@ namespace ResourceBox.Infra.Data.Repositories
 
         public void Update(TEntity obj)
         {
-            var entry = resourceBoxContext.Entry(obj);
-            DbSet.Attach(obj);
+            var entry = resourceBoxContext.Entry(obj);           
             entry.State = EntityState.Modified;
             resourceBoxContext.SaveChanges();
         }
 
-        public void Remove(TEntity obj)
+        public void Remove(long id)
         {
-            DbSet.Remove(obj);
-            resourceBoxContext.SaveChanges();
+            var obj = DbSet.Find(id);
+            if (obj != null)
+            {
+                DbSet.Remove(obj);
+                resourceBoxContext.SaveChanges();
+            }
+            
         }
 
         public void Dispose()

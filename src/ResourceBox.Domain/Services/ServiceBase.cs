@@ -27,9 +27,9 @@ namespace ResourceBox.Domain.Services
             return repositoryBase.GetById(id);
         }
 
-        public void Remove(TEntity obj)
+        public void Remove(long id)
         {
-            repositoryBase.Remove(obj);
+            repositoryBase.Remove(id);
         }
 
         public void Update(TEntity obj)

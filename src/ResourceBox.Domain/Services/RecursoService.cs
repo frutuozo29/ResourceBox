@@ -1,4 +1,5 @@
-﻿using ResourceBox.Domain.Entities;
+﻿using System;
+using ResourceBox.Domain.Entities;
 using ResourceBox.Domain.Interfaces.Repository;
 
 namespace ResourceBox.Domain.Services

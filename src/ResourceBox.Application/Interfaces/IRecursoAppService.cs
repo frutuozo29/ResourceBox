@@ -10,6 +10,6 @@ namespace ResourceBox.Application.Interfaces
         RecursoViewModel GetById(long id);
         IEnumerable<RecursoViewModel> GetAll();
         void Update(RecursoViewModel obj);
-        void Remove(RecursoViewModel obj);
+        void Remove(long id);        
     }
 }

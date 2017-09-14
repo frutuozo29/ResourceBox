@@ -49,16 +49,16 @@ namespace ResourceBox.Application.Services
             return GetMapperRecursoToRecursoViewModel(recursoService.GetById(id));
         }
 
-        public void Remove(RecursoViewModel obj)
-        {
-            recursoService.Remove(GetMapperRecursoViewModelToRecurso(obj));
-        }
-
         public void Update(RecursoViewModel obj)
         {
             var recurso = GetMapperRecursoViewModelToRecurso(obj);
             recurso.Id = obj.Id;
             recursoService.Update(recurso);
+        }
+
+        public void Remove(long id)
+        {
+            recursoService.Remove(id);
         }
     }
 }
