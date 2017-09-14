@@ -4,6 +4,5 @@ namespace ResourceBox.Domain.Interfaces.Repository
 {
     public interface IRecursoRepository : IRepositoryBase<Recurso>
     {
-        void Remove(long id);
     }
 }
