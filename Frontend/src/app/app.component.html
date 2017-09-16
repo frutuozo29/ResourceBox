@@ -1,8 +1,8 @@
 <nav class="grey darken-4">
     <div class="nav-wrapper">
-        <a href="#!" class="brand-logo right">ResourceBox</a>
+        <a routerLink="" routerLinkActive="active" class="brand-logo right">ResourceBox</a>
         <ul class="left hide-on-med-and-down">
-            <li><a>Recursos</a></li>
+            <li><a routerLink="/recursos" routerLinkActive="active">Recursos</a></li>
             <li><a>Entradas</a></li>
             <li><a>Saidas</a></li>
             <li><a>Sair</a></li>
@@ -10,5 +10,5 @@
     </div>
 </nav>
 <div class="container">
-
+    <router-outlet></router-outlet>
 </div>
