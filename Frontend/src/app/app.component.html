@@ -1,14 +1,34 @@
-<nav class="grey darken-4">
-    <div class="nav-wrapper">
-        <a routerLink="" routerLinkActive="active" class="brand-logo right">ResourceBox</a>
-        <ul class="left hide-on-med-and-down">
-            <li><a routerLink="/recursos" routerLinkActive="active">Recursos</a></li>
-            <li><a>Entradas</a></li>
-            <li><a>Saidas</a></li>
-            <li><a>Sair</a></li>
-        </ul>
-    </div>
+<nav class="container navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Resource Box</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Cadastros
+        </a>
+        <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a routerLink="recurso" class="dropdown-item">Recursos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown" dropdown>
+        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Movimentos
+        </a>
+        <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item">Entradas</a>
+          <a class="dropdown-item">Saidas</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </nav>
+
 <div class="container">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
