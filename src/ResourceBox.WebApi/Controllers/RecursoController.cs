@@ -2,10 +2,12 @@
 using ResourceBox.Application.ViewModel;
 using System.Collections.Generic;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ResourceBox.WebApi.Controllers
 {
     [RoutePrefix("api/recurso")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RecursoController : ApiController
     {
         private readonly IRecursoAppService recursoAppService;
