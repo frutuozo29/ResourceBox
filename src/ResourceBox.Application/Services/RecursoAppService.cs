@@ -35,7 +35,6 @@ namespace ResourceBox.Application.Services
 
         public void Dispose()
         {
-
             GC.SuppressFinalize(this);
         }
 

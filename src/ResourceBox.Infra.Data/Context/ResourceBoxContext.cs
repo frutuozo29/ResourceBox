@@ -17,6 +17,7 @@ namespace ResourceBox.Infra.Data.Context
         public DbSet<Recurso> Recursos { get; set; }
         public DbSet<Entrada> Entradas { get; set; }
         public DbSet<Responsavel> Responsaveis { get; set; }
+        public DbSet<RecursoEntrada> RecursosEntrada { get; set; }
         
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -35,6 +36,9 @@ namespace ResourceBox.Infra.Data.Context
                 .Configure(p => p.HasMaxLength(200));
 
             modelBuilder.Configurations.Add(new RecursoEntityConfig());
+            modelBuilder.Configurations.Add(new EntradaEntityConfig());
+            modelBuilder.Configurations.Add(new ResponsavelEntityConfig());
+            modelBuilder.Configurations.Add(new RecursoEntradaEntityConfig());
             
             base.OnModelCreating(modelBuilder);
         }

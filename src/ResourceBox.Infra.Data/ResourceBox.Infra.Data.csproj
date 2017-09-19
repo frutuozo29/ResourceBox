@@ -52,15 +52,18 @@
     <Compile Include="Context\ResourceBoxContext.cs" />
     <Compile Include="EntityConfiguration\EntradaEntityConfig.cs" />
     <Compile Include="EntityConfiguration\RecursoEntityConfig.cs" />
+    <Compile Include="EntityConfiguration\RecursoEntradaEntityConfig.cs" />
     <Compile Include="EntityConfiguration\ResponsavelEntityConfig.cs" />
-    <Compile Include="Migrations\201709192052248_EntradaEResponsavelModel.cs" />
-    <Compile Include="Migrations\201709192052248_EntradaEResponsavelModel.Designer.cs">
-      <DependentUpon>201709192052248_EntradaEResponsavelModel.cs</DependentUpon>
+    <Compile Include="Migrations\201709192305540_ModelsERelacionamentos.cs" />
+    <Compile Include="Migrations\201709192305540_ModelsERelacionamentos.Designer.cs">
+      <DependentUpon>201709192305540_ModelsERelacionamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EntradaRepository.cs" />
     <Compile Include="Repositories\RecursoRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\ResponsavelRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResourceBox.Domain\ResourceBox.Domain.csproj">
@@ -73,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709192052248_EntradaEResponsavelModel.resx">
-      <DependentUpon>201709192052248_EntradaEResponsavelModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709192305540_ModelsERelacionamentos.resx">
+      <DependentUpon>201709192305540_ModelsERelacionamentos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

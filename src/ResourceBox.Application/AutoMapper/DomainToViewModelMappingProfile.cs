@@ -9,6 +9,8 @@ namespace ResourceBox.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Recurso, RecursoViewModel>();
+            CreateMap<Entrada, EntradaViewModel>();
+            CreateMap<Responsavel, ResponsavelViewModel>();
         }
     }
 }

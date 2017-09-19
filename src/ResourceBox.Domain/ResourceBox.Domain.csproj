@@ -35,13 +35,20 @@
   <ItemGroup>
     <Compile Include="Entities\Entrada.cs" />
     <Compile Include="Entities\Recurso.cs" />
+    <Compile Include="Entities\RecursoEntrada.cs" />
     <Compile Include="Entities\Responsavel.cs" />
+    <Compile Include="Interfaces\Repository\IEntradaRepository.cs" />
     <Compile Include="Interfaces\Repository\IRecursoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepositoryBase.cs" />
+    <Compile Include="Interfaces\Repository\IResponsavelRepository.cs" />
+    <Compile Include="Interfaces\Services\IEntradaService.cs" />
+    <Compile Include="Interfaces\Services\IResponsavelService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\Services\IRecursoService.cs" />
     <Compile Include="Interfaces\Services\IServiceBase.cs" />
+    <Compile Include="Services\EntradaService.cs" />
     <Compile Include="Services\RecursoService.cs" />
+    <Compile Include="Services\ResponsavelService.cs" />
     <Compile Include="Services\ServiceBase.cs" />
   </ItemGroup>
   <ItemGroup />

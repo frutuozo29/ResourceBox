@@ -7,18 +7,18 @@ namespace ResourceBox.Infra.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class EntradaEResponsavelModel : IMigrationMetadata
+    public sealed partial class ModelsERelacionamentos : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EntradaEResponsavelModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModelsERelacionamentos));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709192052248_EntradaEResponsavelModel"; }
+            get { return "201709192305540_ModelsERelacionamentos"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

@@ -48,10 +48,14 @@
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Interfaces\IRecursoAppService.cs" />
+    <Compile Include="Interfaces\IResponsavelAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AppServiceBase.cs" />
     <Compile Include="Services\RecursoAppService.cs" />
+    <Compile Include="Services\ResponsavelAppService.cs" />
+    <Compile Include="ViewModel\EntradaViewModel.cs" />
     <Compile Include="ViewModel\RecursoViewModel.cs" />
+    <Compile Include="ViewModel\ResponsavelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResourceBox.Domain\ResourceBox.Domain.csproj">
