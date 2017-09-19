@@ -15,7 +15,9 @@ namespace ResourceBox.Infra.Data.Context
         }
 
         public DbSet<Recurso> Recursos { get; set; }
-
+        public DbSet<Entrada> Entradas { get; set; }
+        public DbSet<Responsavel> Responsaveis { get; set; }
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

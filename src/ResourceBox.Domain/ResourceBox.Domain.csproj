@@ -33,7 +33,9 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Entrada.cs" />
     <Compile Include="Entities\Recurso.cs" />
+    <Compile Include="Entities\Responsavel.cs" />
     <Compile Include="Interfaces\Repository\IRecursoRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepositoryBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

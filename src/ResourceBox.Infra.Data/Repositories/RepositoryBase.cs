@@ -36,10 +36,7 @@ namespace ResourceBox.Infra.Data.Repositories
         }
 
         public void Update(TEntity obj)
-        {
-            //DbSet.Attach(obj);
-            //var entry = resourceBoxContext.Entry(obj);           
-            //entry.State = EntityState.Modified;
+        {        
             DbSet.AddOrUpdate(obj);
             resourceBoxContext.SaveChanges();
         }
