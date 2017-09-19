@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Migrations;
 
 namespace ResourceBox.Infra.Data.Repositories
 {
@@ -36,8 +37,10 @@ namespace ResourceBox.Infra.Data.Repositories
 
         public void Update(TEntity obj)
         {
-            var entry = resourceBoxContext.Entry(obj);           
-            entry.State = EntityState.Modified;
+            //DbSet.Attach(obj);
+            //var entry = resourceBoxContext.Entry(obj);           
+            //entry.State = EntityState.Modified;
+            DbSet.AddOrUpdate(obj);
             resourceBoxContext.SaveChanges();
         }
 
