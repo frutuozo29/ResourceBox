@@ -1,3 +1,28 @@
-<p>
-  recurso works!
-</p>
+<div class="row">
+  <button class="btn btn-primary" (click)="novo()">Novo</button>
+</div>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Descrição</th>
+      <th>Observação</th>
+      <th>Editar</th>      
+      <th>Excluir</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recurso of recursos">
+      <th scope="row">{{ recurso.Id }}</th>
+      <td>{{ recurso.Descricao }}</td>
+      <td>{{ recurso.Observacao }}</td>
+      <td>
+        <a [routerLink]="['/recurso', recurso.Id]">Editar</a>
+      </td>
+      <td>
+        <a href="" (click)="delete(recurso)">Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
