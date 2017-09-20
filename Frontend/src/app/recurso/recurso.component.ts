@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { FormGroup } from "@angular/forms/forms";
 
-import { RecursoService } from './recurso.service';
+import { RecursoService } from './services/recurso.service';
 import { Recurso } from './shared/recurso';
 
 
@@ -13,9 +12,8 @@ import { Recurso } from './shared/recurso';
 })
 export class RecursoComponent implements OnInit {
 
-  private recursos: Recurso[] = [];
-  form: FormGroup;
-  
+  recursos: Recurso[] = [];
+
   constructor(
     private router: Router,
     private recursoService: RecursoService) { }
@@ -27,22 +25,21 @@ export class RecursoComponent implements OnInit {
       })
   }
 
-  novo(){    
+  novo() {
     this.router.navigate(['recurso/form']);
   }
 
-  delete(recurso){
-    console.log(recurso);
+  delete(recurso) {
     if (confirm("Tem certeza de que deseja excluir " + recurso.Descricao + "?")) {
       var index = this.recursos.indexOf(recurso);
       this.recursos.splice(index, 1);
 
-      this.recursoService.deleteRecurso(recurso.Id)
-        .subscribe(null,
-          err => {
-            alert("Não foi possível excluir o recurso.");            
-            this.recursos.splice(index, 0, recurso);
-          });
+      let result = this.recursoService.deleteRecurso(recurso.Id);
+      result.subscribe(data => this.router.navigate(['recurso']),
+        err => {
+          alert("Não foi possível excluir o recurso.");
+          this.recursos.splice(index, 0, recurso);
+        });
     }
   }
 }

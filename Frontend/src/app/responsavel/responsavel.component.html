@@ -6,24 +6,22 @@
   <thead>
     <tr>
       <th>#</th>
-      <th>Descrição</th>
-      <th>Observação</th>
+      <th>Nome</th>      
       <th>Editar</th>
       <th>Excluir</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let recurso of recursos">
-      <th scope="row">{{ recurso.Id }}</th>
-      <td>{{ recurso.Descricao }}</td>
-      <td>{{ recurso.Observacao }}</td>
+    <tr *ngFor="let responsavel of responsaveis">
+      <th scope="row">{{ responsavel.Id }}</th>
+      <td>{{ responsavel.Nome }}</td>
       <td>
-        <a [routerLink]="['/recurso', recurso.Id]">
+        <a [routerLink]="['/responsavel', responsavel.Id]">
           <i class="material-icons">mode_edit</i>
         </a>
       </td>
       <td>
-        <a href="/recurso" (click)="delete(recurso)">
+        <a href="/responsavel" (click)="delete(responsavel)">
           <i class="material-icons">delete</i>
         </a>
       </td>

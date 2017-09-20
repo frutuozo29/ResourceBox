@@ -1,27 +1,22 @@
 <nav class="container navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="#">Resource Box</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-    aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          Cadastros
-        </a>
+        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-expanded="false">Cadastros</a>
         <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a routerLink="recurso" class="dropdown-item">Recursos</a>
+          <a routerLink="responsavel" class="dropdown-item">Responsáveis</a>
         </div>
       </li>
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
-          Movimentos
-        </a>
+        <a dropdownToggle class="nav-link dropdown-toggle text-light" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-expanded="false">Movimentos</a>
         <div *dropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item">Entradas</a>
+          <a routerLink="entrada" class="dropdown-item">Entradas</a>
           <a class="dropdown-item">Saidas</a>
         </div>
       </li>

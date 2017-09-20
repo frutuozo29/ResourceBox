@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="save(f)">
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="id" name="Id" [(ngModel)]="responsavel.Id" #Id="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="Nome">Nome</label>
+    <input type="text" class="form-control form-control-danger" id="Nome" placeholder="Nome" name="Nome" [(ngModel)]="responsavel.Nome"
+      #Nome="ngModel" required [class.is-invalid]="!Nome.valid && Nome.touched">
+  </div>
+  <div *ngIf="!Nome.valid && Nome.touched" class="alert alert-danger">
+    <div *ngIf="Nome.errors.required">
+      Nome é um campo obrigatório.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
+</form>

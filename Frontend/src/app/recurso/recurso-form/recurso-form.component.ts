@@ -1,4 +1,4 @@
-import { RecursoService } from './../recurso.service';
+import { RecursoService } from './../services/recurso.service';
 import { FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
