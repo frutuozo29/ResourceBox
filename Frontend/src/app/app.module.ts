@@ -15,6 +15,7 @@ import { EntradaComponent } from './entrada/entrada.component';
 import { ResponsavelComponent } from './responsavel/responsavel.component';
 import { ResponsavelFormComponent } from './responsavel/responsavel-form/responsavel-form.component';
 import { ResponsavelService } from './responsavel/services/responsavel.service';
+import { EntradaFormComponent } from './entrada/entrada-form/entrada-form.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ResponsavelService } from './responsavel/services/responsavel.service';
     RecursoFormComponent,
     EntradaComponent,
     ResponsavelComponent,
-    ResponsavelFormComponent
+    ResponsavelFormComponent,
+    EntradaFormComponent
   ],
   imports: [
     BrowserModule,

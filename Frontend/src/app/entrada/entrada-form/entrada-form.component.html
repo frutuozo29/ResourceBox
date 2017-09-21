@@ -1,0 +1,26 @@
+<form #f="ngForm">
+  <div class="row">
+    <div class="col col-3">
+      <div class="form-group">
+        <label for="inputData">Data</label>
+        <input class="form-control" type="date" name="Data" id="inputData">
+      </div>
+    </div>
+    <div class="col col-6">
+      <div class="form-group">
+        <label for="inputResponsavel">Responsável</label>
+        <select #selectOption class="form-control" (change)="onChange($event)" required>
+            <option *ngFor="let responsavel of responsaveis" [(ngValue)]="responsavel.Id" > {{ responsavel.Id +" - "+ responsavel.Nome }} </option>
+         </select>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <fieldset class="form-group">
+    <legend>Recursos da Entrada</legend>
+
+  </fieldset>
+  <div>
+    <button class="btn btn-primary" (click)="salvar(selectOption)">Salvar</button>
+  </div>
+</form>

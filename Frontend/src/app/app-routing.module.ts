@@ -7,6 +7,7 @@ import { RecursoFormComponent } from './recurso/recurso-form/recurso-form.compon
 import { ResponsavelComponent } from './responsavel/responsavel.component';
 import { ResponsavelFormComponent } from './responsavel/responsavel-form/responsavel-form.component';
 import { EntradaComponent } from './entrada/entrada.component';
+import { EntradaFormComponent } from './entrada/entrada-form/entrada-form.component';
 
 const routes: Routes = [
   { path: 'recurso', component: RecursoComponent },
@@ -16,6 +17,8 @@ const routes: Routes = [
   { path: 'responsavel/form', component: ResponsavelFormComponent },
   { path: 'responsavel/:id', component: ResponsavelFormComponent },
   { path: 'entrada', component: EntradaComponent },
+  { path: 'entrada/form', component: EntradaFormComponent },
+  { path: 'entrada/:id', component: EntradaFormComponent },
   { path: '', component: HomeComponent }
 ];
 
