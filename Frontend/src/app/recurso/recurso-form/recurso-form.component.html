@@ -1,0 +1,27 @@
+<form #f="ngForm" (ngSubmit)="save(f)">
+  <div class="form-group" hidden>
+    <input type="text" class="form-control" id="id" name="id" [(ngModel)]="recurso.Id" #id="ngModel">
+  </div>
+  <div class="form-group">
+    <label for="descricao">Descrição</label>
+    <input type="text" class="form-control form-control-danger" id="descricao" placeholder="Descrição" name="descricao" [(ngModel)]="recurso.Descricao"
+      #descricao="ngModel" required [class.is-invalid]="!descricao.valid && descricao.touched">
+  </div>
+  <div *ngIf="!descricao.valid && descricao.touched" class="alert alert-danger">
+    <div *ngIf="descricao.errors.required">
+      Descrição é um campo obrigatório.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="observacao">Observação</label>
+    <textarea type="text" class="form-control form-control-danger" id="observacao" placeholder="Observação" rows="3" name="observacao"
+      [(ngModel)]="recurso.Observacao" required #observacao="ngModel" [class.is-invalid]="!observacao.valid && observacao.touched"></textarea>
+  </div>
+  <div *ngIf="!observacao.valid && observacao.touched" class="alert alert-danger">
+    <div *ngIf="observacao.errors.required">
+      Observação é um campo obrigatório.
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
+</form>

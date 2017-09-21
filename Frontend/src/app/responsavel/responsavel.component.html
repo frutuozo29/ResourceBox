@@ -1,0 +1,30 @@
+<div class="row">
+  <button class="btn btn-primary" (click)="novo()">Novo</button>
+</div>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>      
+      <th>Editar</th>
+      <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let responsavel of responsaveis">
+      <th scope="row">{{ responsavel.Id }}</th>
+      <td>{{ responsavel.Nome }}</td>
+      <td>
+        <a [routerLink]="['/responsavel', responsavel.Id]">
+          <i class="material-icons">mode_edit</i>
+        </a>
+      </td>
+      <td>
+        <a href="/responsavel" (click)="delete(responsavel)">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
