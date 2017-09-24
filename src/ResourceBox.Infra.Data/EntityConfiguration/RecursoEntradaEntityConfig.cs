@@ -8,6 +8,14 @@ namespace ResourceBox.Infra.Data.EntityConfiguration
         public RecursoEntradaEntityConfig()
         {
             HasKey(re => re.Id);
+            /*
+            HasRequired(re => re.Entrada)
+                .WithMany()
+                .HasForeignKey(re => re.EntradaId);*/
+
+            HasRequired(re => re.Recurso)
+                .WithMany()
+                .HasForeignKey(re => re.RecursoId);
         }
     }
 }

@@ -5,6 +5,11 @@ namespace ResourceBox.Domain.Entities
 {
     public class Entrada
     {
+        public Entrada()
+        {
+            RecursosEntrada = new List<RecursoEntrada>();
+        }
+
         public long Id { get; set; }
         public DateTime Data { get; set; }
         public long ResponsavelId { get; set; }

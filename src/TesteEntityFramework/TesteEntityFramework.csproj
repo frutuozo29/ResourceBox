@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FD6EA29C-29C8-4EA2-84B7-178CAA365D6F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{CD7AE28D-5408-4CFD-8050-ED75B60E984B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ResourceBox.Application</RootNamespace>
-    <AssemblyName>ResourceBox.Application</AssemblyName>
+    <RootNamespace>TesteEntityFramework</RootNamespace>
+    <AssemblyName>TesteEntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,11 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,30 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
-    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
-    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
-    <Compile Include="Interfaces\IEntradaAppService.cs" />
-    <Compile Include="Interfaces\IRecursoAppService.cs" />
-    <Compile Include="Interfaces\IResponsavelAppService.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AppServiceBase.cs" />
-    <Compile Include="Services\EntradaAppService.cs" />
-    <Compile Include="Services\RecursoAppService.cs" />
-    <Compile Include="Services\ResponsavelAppService.cs" />
-    <Compile Include="ViewModel\EntradaViewModel.cs" />
-    <Compile Include="ViewModel\RecursoEntradaViewModel.cs" />
-    <Compile Include="ViewModel\RecursoViewModel.cs" />
-    <Compile Include="ViewModel\ResponsavelViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ResourceBox.Domain\ResourceBox.Domain.csproj">
-      <Project>{B1E635F8-E4AE-449D-AD4F-5A132D9D4E79}</Project>
+      <Project>{b1e635f8-e4ae-449d-ad4f-5a132d9d4e79}</Project>
       <Name>ResourceBox.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\ResourceBox.Infra.Data\ResourceBox.Infra.Data.csproj">
+      <Project>{a4cbbc7b-ab2a-4bd6-892c-e32702cc8765}</Project>
+      <Name>ResourceBox.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

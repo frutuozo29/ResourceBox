@@ -11,6 +11,7 @@ namespace ResourceBox.Application.AutoMapper
             CreateMap<RecursoViewModel, Recurso>();
             CreateMap<EntradaViewModel, Entrada>();
             CreateMap<ResponsavelViewModel, Responsavel>();
+            CreateMap<RecursoEntradaViewModel, RecursoEntrada>();
         }      
     }
 }

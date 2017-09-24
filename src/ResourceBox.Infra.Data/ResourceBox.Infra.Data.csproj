@@ -54,9 +54,9 @@
     <Compile Include="EntityConfiguration\RecursoEntityConfig.cs" />
     <Compile Include="EntityConfiguration\RecursoEntradaEntityConfig.cs" />
     <Compile Include="EntityConfiguration\ResponsavelEntityConfig.cs" />
-    <Compile Include="Migrations\201709192305540_ModelsERelacionamentos.cs" />
-    <Compile Include="Migrations\201709192305540_ModelsERelacionamentos.Designer.cs">
-      <DependentUpon>201709192305540_ModelsERelacionamentos.cs</DependentUpon>
+    <Compile Include="Migrations\201709212359215_firstdatabase.cs" />
+    <Compile Include="Migrations\201709212359215_firstdatabase.Designer.cs">
+      <DependentUpon>201709212359215_firstdatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709192305540_ModelsERelacionamentos.resx">
-      <DependentUpon>201709192305540_ModelsERelacionamentos.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709212359215_firstdatabase.resx">
+      <DependentUpon>201709212359215_firstdatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,8 +8,7 @@ namespace ResourceBox.WebApi
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            AutoMapperConfig.RegisterMappings();
-
+            AutoMapperConfig.RegisterMappings();            
         }
     }
 }

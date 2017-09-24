@@ -155,6 +155,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SimpleInjectorWebApiInitializer.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EntradaController.cs" />
     <Compile Include="Controllers\RecursoController.cs" />
     <Compile Include="Controllers\ResponsavelController.cs" />
     <Compile Include="Global.asax.cs">

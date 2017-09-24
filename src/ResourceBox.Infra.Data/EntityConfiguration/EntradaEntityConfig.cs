@@ -11,7 +11,7 @@ namespace ResourceBox.Infra.Data.EntityConfiguration
 
             HasRequired(e => e.Responsavel)
                 .WithMany()
-                .HasForeignKey(e => e.ResponsavelId);
+                .HasForeignKey(e => e.ResponsavelId);            
         }
     }
 }

@@ -1,8 +1,8 @@
 namespace ResourceBox.Infra.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    
-    public partial class ModelsERelacionamentos : DbMigration
+
+    public partial class firstdatabase : DbMigration
     {
         public override void Up()
         {
@@ -24,14 +24,14 @@ namespace ResourceBox.Infra.Data.Migrations
                     {
                         Id = c.Long(nullable: false, identity: true),
                         Qtde = c.Long(nullable: false),
+                        RecursoId = c.Long(nullable: false),
                         Entrada_Id = c.Long(),
-                        Recurso_Id = c.Long(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Entrada", t => t.Entrada_Id)
-                .ForeignKey("dbo.Recurso", t => t.Recurso_Id)
-                .Index(t => t.Entrada_Id)
-                .Index(t => t.Recurso_Id);
+                .ForeignKey("dbo.Recurso", t => t.RecursoId)
+                .Index(t => t.RecursoId)
+                .Index(t => t.Entrada_Id);
             
             CreateTable(
                 "dbo.Recurso",
@@ -57,10 +57,10 @@ namespace ResourceBox.Infra.Data.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Entrada", "ResponsavelId", "dbo.Responsavel");
-            DropForeignKey("dbo.RecursoEntrada", "Recurso_Id", "dbo.Recurso");
+            DropForeignKey("dbo.RecursoEntrada", "RecursoId", "dbo.Recurso");
             DropForeignKey("dbo.RecursoEntrada", "Entrada_Id", "dbo.Entrada");
-            DropIndex("dbo.RecursoEntrada", new[] { "Recurso_Id" });
             DropIndex("dbo.RecursoEntrada", new[] { "Entrada_Id" });
+            DropIndex("dbo.RecursoEntrada", new[] { "RecursoId" });
             DropIndex("dbo.Entrada", new[] { "ResponsavelId" });
             DropTable("dbo.Responsavel");
             DropTable("dbo.Recurso");

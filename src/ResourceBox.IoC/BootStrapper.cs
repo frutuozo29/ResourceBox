@@ -15,6 +15,7 @@ namespace ResourceBox.IoC
             //Application
             container.Register<IRecursoAppService, RecursoAppService>(Lifestyle.Singleton);
             container.Register<IResponsavelAppService, ResponsavelAppService>(Lifestyle.Singleton);
+            container.Register<IEntradaAppService, EntradaAppService>(Lifestyle.Singleton);
 
             //Domain
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
