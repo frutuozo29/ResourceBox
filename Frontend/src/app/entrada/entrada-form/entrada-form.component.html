@@ -1,26 +1,32 @@
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="save(f)">
   <div class="row">
-    <div class="col col-3">
+    <div class="col col-4">
       <div class="form-group">
         <label for="inputData">Data</label>
-        <input class="form-control" type="date" name="Data" id="inputData">
+        <input class="form-control" type="date" #Data="ngModel" name="Data" id="inputData" [(ngModel)]="entrada.Data">
       </div>
     </div>
     <div class="col col-6">
       <div class="form-group">
         <label for="inputResponsavel">Responsável</label>
-        <select #selectOption class="form-control" (change)="onChange($event)" required>
-            <option *ngFor="let responsavel of responsaveis" [(ngValue)]="responsavel.Id" > {{ responsavel.Id +" - "+ responsavel.Nome }} </option>
+        <select #selectOption class="form-control" required [(ngModel)]="entrada.ResponsavelId" name="ResponsavelId">
+            <option *ngFor="let responsavel of responsaveis" [ngValue]="responsavel.Id" > {{ responsavel.Id +" - "+ responsavel.Nome }} </option>
          </select>
       </div>
     </div>
   </div>
-  <br><br>
+  <br>
   <fieldset class="form-group">
     <legend>Recursos da Entrada</legend>
-
+    <hr>
+    <div class="container">
+      <!--app-entrada-detail [recursosEntrada]="entrada.RecursosEntrada"></app-entrada-detail-->
+      <router-outlet></router-outlet>
+    </div>
   </fieldset>
+  <app-form-debug [form]="f" [model]="entrada"></app-form-debug>
   <div>
-    <button class="btn btn-primary" (click)="salvar(selectOption)">Salvar</button>
+    <button class="btn btn-outline-info">Salvar</button>
+    <button class="btn btn-outline-danger" (click)="cancel()">Cancelar</button>
   </div>
 </form>

@@ -2,10 +2,14 @@
   <div class="form-group" hidden>
     <input type="text" class="form-control" id="id" name="id" [(ngModel)]="recurso.Id" #id="ngModel">
   </div>
-  <div class="form-group">
-    <label for="descricao">Descrição</label>
-    <input type="text" class="form-control form-control-danger" id="descricao" placeholder="Descrição" name="descricao" [(ngModel)]="recurso.Descricao"
-      #descricao="ngModel" required [class.is-invalid]="!descricao.valid && descricao.touched">
+  <div class="row">
+    <div class="col col-4">
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control form-control-danger" id="descricao" placeholder="Descrição" name="descricao" [(ngModel)]="recurso.Descricao"
+          #descricao="ngModel" required [class.is-invalid]="!descricao.valid && descricao.touched">
+      </div>
+    </div>
   </div>
   <div *ngIf="!descricao.valid && descricao.touched" class="alert alert-danger">
     <div *ngIf="descricao.errors.required">
@@ -23,5 +27,8 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
+  <div>
+    <button type="submit" class="btn btn-outline-info" [disabled]="!f.valid">Salvar</button>
+    <button class="btn btn-outline-danger" (click)="cancel()">Cancelar</button>
+  </div>
 </form>

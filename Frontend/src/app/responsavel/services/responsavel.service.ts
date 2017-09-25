@@ -47,5 +47,4 @@ export class ResponsavelService {
   private getResponsavelUrl(id){
     return this.url + "/" + id;
   }
-
 }

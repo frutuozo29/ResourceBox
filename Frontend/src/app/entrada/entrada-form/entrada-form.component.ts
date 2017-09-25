@@ -1,5 +1,11 @@
-import { Responsavel } from './../../responsavel/shared/responsavel';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+
+import * as moment from 'moment'
+import { Entrada } from './../shares/Entrada';
+import { EntradaService } from './../services/entrada.service';
+import { Responsavel } from './../../responsavel/shared/responsavel';
+import { ResponsavelService } from './../../responsavel/services/responsavel.service';
 
 @Component({
   selector: 'app-entrada-form',
@@ -9,37 +15,56 @@ import { Component, OnInit } from '@angular/core';
 export class EntradaFormComponent implements OnInit {
 
   responsaveis: Responsavel[] = [];
-  selectedRepresentante: any = {};
-
-  constructor() { 
-    var responsavel1 = new Responsavel();
-    responsavel1.Id = 1;
-    responsavel1.Nome = "Renan";
-    this.responsaveis.push(responsavel1);
-    var responsavel2 = new Responsavel();
-    responsavel2.Id = 2;
-    responsavel2.Nome = "Rodolffo";
-    this.responsaveis.push(responsavel2);
-    var responsavel3 = new Responsavel();
-    responsavel3.Id = 3;
-    responsavel3.Nome = "Rayane";
-    this.responsaveis.push(responsavel3);
-    var responsavel4 = new Responsavel();
-    responsavel4.Id = 4;
-    responsavel4.Nome = "Pai/Mãe";
-    this.responsaveis.push(responsavel4);
-  }
+  entrada: Entrada = new Entrada();
+  responsavel: any = {};
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private entradaService: EntradaService,
+    private responsavelService: ResponsavelService
+  ) { }
 
   ngOnInit() {
+    var id = this.route.snapshot.params['id'];
+    this.popularDropDownResponsaveis();
+
+    if (!id) 
+      return;
+    
+    this.entradaService.getEntrada(id)
+      .subscribe(
+      entrada => this.entrada = entrada,
+      response => {
+        if (response.status == 404) {
+          this.router.navigate(['']);
+        }
+      });
   }
 
-  salvar(selectOption){
-    console.log(selectOption.option.value);
-    console.log(this.selectedRepresentante)
+  save(form) {
+    let result;
+    let entradaValue = this.entrada;
+    if (entradaValue.Id) {
+      result = this.entradaService.updateEntrada(entradaValue);
+    } else {
+      result = this.entradaService.addEntrada(entradaValue);
+    }
+
+    result.subscribe(data => this.router.navigate(['entrada']));
   }
 
-  onChange(event){
-    console.log(event)
+  cancel() {
+    this.router.initialNavigation();
   }
 
+  popularDropDownResponsaveis() {
+    this.responsavelService.getResponsaveis()
+      .subscribe(
+      responsaveis => this.responsaveis = responsaveis,
+      response => {
+        if (response.status == 404) {
+          this.router.navigate(['']);
+        }
+      });
+  }
 }

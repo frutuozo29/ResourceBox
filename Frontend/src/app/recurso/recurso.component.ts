@@ -26,7 +26,7 @@ export class RecursoComponent implements OnInit {
   }
 
   novo() {
-    this.router.navigate(['recurso/form']);
+    this.router.navigate(['recurso/novo']);
   }
 
   delete(recurso) {

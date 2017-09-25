@@ -1,15 +1,15 @@
 <div class="row">
-  <button class="btn btn-primary" (click)="novo()">Novo</button>
+  <button class="btn btn-outline-info" (click)="novo()">Novo</button>
 </div>
 <br>
-<table class="table">
+<table class="table table-hover table-sm">
   <thead>
     <tr>
       <th>#</th>
       <th>Descrição</th>
       <th>Observação</th>
-      <th>Editar</th>
-      <th>Excluir</th>
+      <th class="text-center">Editar</th>
+      <th class="text-center">Excluir</th>
     </tr>
   </thead>
   <tbody>
@@ -17,12 +17,12 @@
       <th scope="row">{{ recurso.Id }}</th>
       <td>{{ recurso.Descricao }}</td>
       <td>{{ recurso.Observacao }}</td>
-      <td>
+      <td class="text-center">
         <a [routerLink]="['/recurso', recurso.Id]">
           <i class="material-icons">mode_edit</i>
         </a>
       </td>
-      <td>
+      <td class="text-center">
         <a href="/recurso" (click)="delete(recurso)">
           <i class="material-icons">delete</i>
         </a>

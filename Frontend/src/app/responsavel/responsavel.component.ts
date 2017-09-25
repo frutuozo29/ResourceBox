@@ -26,7 +26,7 @@ export class ResponsavelComponent implements OnInit {
   }
 
   novo() {
-    this.router.navigate(['responsavel/form']);
+    this.router.navigate(['responsavel/novo']);
   }
 
   delete(responsavel) {

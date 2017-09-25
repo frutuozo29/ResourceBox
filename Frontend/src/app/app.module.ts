@@ -16,6 +16,10 @@ import { ResponsavelComponent } from './responsavel/responsavel.component';
 import { ResponsavelFormComponent } from './responsavel/responsavel-form/responsavel-form.component';
 import { ResponsavelService } from './responsavel/services/responsavel.service';
 import { EntradaFormComponent } from './entrada/entrada-form/entrada-form.component';
+import { EntradaDetailComponent } from './entrada/entrada-detail/entrada-detail.component';
+import { EntradaService } from './entrada/services/entrada.service';
+import { FormDebugComponent } from './form-debug/form-debug.component';
+import { EntradaDetailFormComponent } from './entrada/entrada-detail-form/entrada-detail-form.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { EntradaFormComponent } from './entrada/entrada-form/entrada-form.compon
     EntradaComponent,
     ResponsavelComponent,
     ResponsavelFormComponent,
-    EntradaFormComponent
+    EntradaFormComponent,
+    EntradaDetailComponent,
+    FormDebugComponent,
+    EntradaDetailFormComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,7 @@ import { EntradaFormComponent } from './entrada/entrada-form/entrada-form.compon
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot()
   ],
-  providers: [RecursoService, ResponsavelService],
+  providers: [RecursoService, ResponsavelService, EntradaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

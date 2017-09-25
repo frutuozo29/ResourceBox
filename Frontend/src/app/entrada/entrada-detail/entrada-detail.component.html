@@ -1,0 +1,26 @@
+<div class="row">
+  <button class="btn btn-outline-info" (click)="novo()">Novo Recurso</button>
+</div>
+<br>
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Produto</th>
+      <th>Quantidade</th>      
+      <th class="text-center">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recursoEntrada of recursosEntrada">
+      <th scope="row">{{ recursoEntrada.Id }}</th>
+      <td>{{ recursoEntrada.RecursoDescricao }}</td>
+      <td>{{ recursoEntrada.Qtde }}</td>      
+      <td class="text-center">
+        <a href="/entrada" (click)="delete(recursoEntrada)">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

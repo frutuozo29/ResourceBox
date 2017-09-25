@@ -1,3 +1,32 @@
-<section>
-  <button routerLink="/entrada/form">Form</button>
-</section>
+<div class="row">
+  <button class="btn btn-outline-info" (click)="novo()">Novo</button>
+</div>
+<br>
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Data</th>      
+      <th>Responsavel</th>      
+      <th class="text-center">Editar</th>
+      <th class="text-center">Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entrada of entradas">
+      <th scope="row">{{ entrada.Id }}</th>
+      <td>{{ entrada.Data | date :'dd/MM/yyyy' }}</td>
+      <td>{{ entrada.ResponsavelNome }}</td>
+      <td class="text-center">
+        <a [routerLink]="['/entrada', entrada.Id]">
+          <i class="material-icons">mode_edit</i>
+        </a>
+      </td>
+      <td class="text-center">
+        <a href="/entrada" (click)="delete(entrada)">
+          <i class="material-icons">delete</i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
