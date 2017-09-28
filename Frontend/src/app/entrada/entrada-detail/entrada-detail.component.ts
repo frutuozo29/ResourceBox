@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { RecursoEntrada } from './../shares/RecursoEntrada';
+import { EntradaService } from './../services/entrada.service';
+import { Entrada } from './../shares/Entrada';
 
 @Component({
   selector: 'app-entrada-detail',
@@ -12,8 +14,11 @@ export class EntradaDetailComponent implements OnInit {
 
   @Input() recursosEntrada: RecursoEntrada[];
 
+  entrada: Entrada;
+
   constructor(
-    private router: Router
+    private router: Router,
+    private entradaService: EntradaService
   ) { }
 
   ngOnInit() {

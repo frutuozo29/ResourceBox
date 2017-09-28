@@ -48,6 +48,6 @@ export class ResponsavelFormComponent implements OnInit {
   }
 
   cancel() {
-    this.router.initialNavigation();
+    this.router.navigate(['responsavel']);
   }
 }

@@ -3,7 +3,7 @@
     <div class="col col-4">
       <div class="form-group">
         <label for="inputData">Data</label>
-        <input class="form-control" type="date" #Data="ngModel" name="Data" id="inputData" [(ngModel)]="entrada.Data">
+        <input class="form-control" type="date" bsDatepicker #Data="ngModel" name="Data" id="inputData" [(ngModel)]="entrada.Data">
       </div>
     </div>
     <div class="col col-6">
@@ -20,13 +20,12 @@
     <legend>Recursos da Entrada</legend>
     <hr>
     <div class="container">
-      <!--app-entrada-detail [recursosEntrada]="entrada.RecursosEntrada"></app-entrada-detail-->
-      <router-outlet></router-outlet>
+      <app-entrada-detail [recursosEntrada]="entrada.RecursosEntrada"></app-entrada-detail>      
     </div>
   </fieldset>
-  <app-form-debug [form]="f" [model]="entrada"></app-form-debug>
   <div>
     <button class="btn btn-outline-info">Salvar</button>
     <button class="btn btn-outline-danger" (click)="cancel()">Cancelar</button>
   </div>
+  <!--app-form-debug [form]="f" [model]="entrada"></app-form-debug-->
 </form>

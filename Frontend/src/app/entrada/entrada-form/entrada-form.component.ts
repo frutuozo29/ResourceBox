@@ -17,6 +17,7 @@ export class EntradaFormComponent implements OnInit {
   responsaveis: Responsavel[] = [];
   entrada: Entrada = new Entrada();
   responsavel: any = {};
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -24,7 +25,7 @@ export class EntradaFormComponent implements OnInit {
     private responsavelService: ResponsavelService
   ) { }
 
-  ngOnInit() {
+  ngOnInit() {    
     var id = this.route.snapshot.params['id'];
     this.popularDropDownResponsaveis();
 
@@ -54,10 +55,10 @@ export class EntradaFormComponent implements OnInit {
   }
 
   cancel() {
-    this.router.initialNavigation();
+    this.router.navigate(['entrada']);
   }
 
-  popularDropDownResponsaveis() {
+  private popularDropDownResponsaveis() {
     this.responsavelService.getResponsaveis()
       .subscribe(
       responsaveis => this.responsaveis = responsaveis,

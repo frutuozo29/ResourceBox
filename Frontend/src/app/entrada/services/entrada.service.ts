@@ -5,12 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { EventEmitter } from 'events';
 
 @Injectable()
 export class EntradaService {
 
   url: string = "http://localhost:58492/api/entrada";
-
   constructor(private http: Http) { }
 
   getEntradas() {
