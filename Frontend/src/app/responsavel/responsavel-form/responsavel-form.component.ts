@@ -37,8 +37,7 @@ export class ResponsavelFormComponent implements OnInit {
 
   save(form) {
     let result;
-    let responsavelValue = form.value; 
-    console.log(responsavelValue);      
+    let responsavelValue = form.value;
     if (responsavelValue.Id) {
       result = this.responsavelService.updateResponsavel(responsavelValue);
     } else {
@@ -48,4 +47,7 @@ export class ResponsavelFormComponent implements OnInit {
     result.subscribe(data => this.router.navigate(['responsavel']));
   }
 
+  cancel() {
+    this.router.navigate(['responsavel']);
+  }
 }

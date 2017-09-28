@@ -11,10 +11,11 @@ import { RecursoComponent } from './recurso/recurso.component';
 import { HomeComponent } from './home/home.component';
 import { RecursoFormComponent } from './recurso/recurso-form/recurso-form.component';
 import { RecursoService } from './recurso/services/recurso.service';
-import { EntradaComponent } from './entrada/entrada.component';
 import { ResponsavelComponent } from './responsavel/responsavel.component';
 import { ResponsavelFormComponent } from './responsavel/responsavel-form/responsavel-form.component';
 import { ResponsavelService } from './responsavel/services/responsavel.service';
+import { EntradaModule } from './entrada/entrada.module';
+import { EntradaService } from './entrada/services/entrada.service';
 
 @NgModule({
   declarations: [
@@ -22,19 +23,19 @@ import { ResponsavelService } from './responsavel/services/responsavel.service';
     RecursoComponent,
     HomeComponent,
     RecursoFormComponent,
-    EntradaComponent,
     ResponsavelComponent,
     ResponsavelFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     HttpModule,
     BsDropdownModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    EntradaModule,
+    AppRoutingModule
   ],
-  providers: [RecursoService, ResponsavelService],
+  providers: [RecursoService, ResponsavelService, EntradaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

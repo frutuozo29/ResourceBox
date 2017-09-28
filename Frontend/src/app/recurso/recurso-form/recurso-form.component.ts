@@ -47,4 +47,8 @@ export class RecursoFormComponent implements OnInit {
 
     result.subscribe(data => this.router.navigate(['recurso']));
   }
+
+  cancel() {
+    this.router.navigate(['recurso']);
+  }
 }

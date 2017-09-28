@@ -2,15 +2,22 @@
   <div class="form-group" hidden>
     <input type="text" class="form-control" id="id" name="Id" [(ngModel)]="responsavel.Id" #Id="ngModel">
   </div>
-  <div class="form-group">
-    <label for="Nome">Nome</label>
-    <input type="text" class="form-control form-control-danger" id="Nome" placeholder="Nome" name="Nome" [(ngModel)]="responsavel.Nome"
-      #Nome="ngModel" required [class.is-invalid]="!Nome.valid && Nome.touched">
+  <div class="row">
+    <div class="col col-4">
+      <div class="form-group">
+        <label for="Nome">Nome</label>
+        <input type="text" class="form-control form-control-danger" id="Nome" placeholder="Nome" name="Nome" [(ngModel)]="responsavel.Nome"
+          #Nome="ngModel" required [class.is-invalid]="!Nome.valid && Nome.touched">
+      </div>
+    </div>
   </div>
   <div *ngIf="!Nome.valid && Nome.touched" class="alert alert-danger">
     <div *ngIf="Nome.errors.required">
       Nome é um campo obrigatório.
     </div>
   </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Salvar</button>
+  <div>
+    <button type="submit" class="btn btn-outline-info" [disabled]="!f.valid">Salvar</button>
+    <button class="btn btn-outline-danger" (click)="cancel()">Cancelar</button>
+  </div>
 </form>

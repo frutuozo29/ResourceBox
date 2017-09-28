@@ -5,46 +5,53 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { EventEmitter } from 'events';
 
 @Injectable()
-export class ResponsavelService {
+export class EntradaService {
 
-  url: string = "http://localhost:58492/api/responsavel";
-
+  url: string = "http://localhost:58492/api/entrada";
   constructor(private http: Http) { }
 
-  getResponsaveis() {
+  getEntradas() {
     return this.http.get(this.url)
       .map(res => res.json());
   }
 
-  getResponsavel(id){
-    return this.http.get(this.getResponsavelUrl(id))
-      .map(res => res.json());
+  getEntrada(id) {
+    return this.http.get(this.getEntradaUrl(id))
+      .map(res => JSON.parse(res.text(), this.reviver));
   }
 
-  addResponsavel(responsavel){
-    let body = JSON.stringify(responsavel);
+  reviver(key, value) {
+    if (value === "timestamp") {
+      return new Date(value);
+    }
+    return value;
+  }
+
+  addEntrada(entrada) {
+    let body = JSON.stringify(entrada);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     return this.http.post(this.url, body, options)
       .map(res => res.json());
   }
 
-  updateResponsavel(responsavel){
-    let body = JSON.stringify(responsavel);
+  updateEntrada(entrada) {
+    let body = JSON.stringify(entrada);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    return this.http.put(this.getResponsavelUrl(responsavel.Id), body, options)
+    return this.http.put(this.getEntradaUrl(entrada.Id), body, options)
       .map(res => res.json());
   }
 
-  deleteResponsavel(id){
-    return this.http.delete(this.getResponsavelUrl(id))
+  deleteEntrada(id) {
+    return this.http.delete(this.getEntradaUrl(id))
       .map(res => res.json());
   }
 
-  private getResponsavelUrl(id){
+  private getEntradaUrl(id) {
     return this.url + "/" + id;
   }
 }
